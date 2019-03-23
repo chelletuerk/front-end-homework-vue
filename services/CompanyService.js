@@ -1,6 +1,7 @@
 export default {
   getAll,
   getById,
+  getCompanyByName,
 };
 
 function getAll() {
@@ -10,6 +11,12 @@ function getAll() {
 function getById(id) {
   const company = fakeCompanies.find(company => company.id === id);
   return Promise.resolve(company);
+}
+
+function getCompanyByName() {
+  fakeCompanies.forEach(function(e, i) {
+    console.log(i.name)
+  })
 }
 
 const fakeCompanies = [
